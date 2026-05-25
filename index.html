@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador en Tiempo Real</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+    <h1>Clasificador Web</h1>
+    <button id="theme-toggle" class="toggle-btn"> Modo Claro</button>
+    <div class="container">
+        <video id="webcam" autoplay playsinline width="640" height="480"></video>
+        <div id="results">
+            <div id="prediction-label">Clase: --</div>
+            <div id="prediction-confidence">Confianza: --%</div>
+            <div id="bars-container">
+            </div>
+        </div>
+    </div>
+    <div id="latency-display" style="position: fixed; top: 10px; right: 10px; background: rgba(0,0,0,0.6); color: white; padding: 5px 10px; border-radius: 8px; font-family: monospace; font-size: 14px; z-index: 1000;">
+        Inferencia: -- ms
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
