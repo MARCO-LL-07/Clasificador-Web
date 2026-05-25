@@ -1,0 +1,131 @@
+ /* Variables CSS para temas */
+:root {
+    --bg-body: #ffffff;
+    --text-primary: #000000;
+    --panel-bg: #f0f0f0;
+    --video-border: #cccccc;
+    --label-bg: #dddddd;
+    --label-text: #000000;
+    --confidence-text: #333333;
+    --bar-bg: #e0e0e0;
+    --bar-fill-default: #555555;
+}
+
+body.dark {
+    --bg-body: #1a1a1a;
+    --text-primary: #ffffff;
+    --panel-bg: #2c2c2c;
+    --video-border: #444444;
+    --label-bg: #3a3a3a;
+    --label-text: #ffffff;
+    --confidence-text: #dddddd;
+    --bar-bg: #444444;
+    --bar-fill-default: #888888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-body);
+    color: var(--text-primary);
+    text-align: center;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+video {
+    background: black;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border: 2px solid var(--video-border);
+    border-radius: 8px;
+}
+
+#results {
+    background: var(--panel-bg);
+    padding: 20px;
+    min-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#prediction-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: var(--label-bg);
+    color: var(--label-text);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+#prediction-confidence {
+    font-size: 1rem;
+    color: var(--confidence-text);
+    margin-bottom: 20px;
+}
+
+#bars-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.bar {
+    background-color: var(--bar-bg);
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    padding: 5px;
+    text-align: right;
+    font-size: 0.8rem;
+    color: white;
+    transition: width 0.2s ease;
+}
+
+
+.toggle-btn {
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: var(--label-bg);
+    color: var(--label-text);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.toggle-btn:hover {
+    opacity: 0.8;
+}
+
+.uncertain-message {
+    background: #ff0000;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
